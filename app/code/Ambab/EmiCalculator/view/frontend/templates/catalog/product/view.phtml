@@ -1,0 +1,68 @@
+
+<!-- <a id="popup-modal" href="#">emi starts from</a> -->
+<?php if ($block->canShowBlock()): ?>
+    <a href="#" id="click-header">
+    emi starts from
+</a>
+<?php endif; ?>
+
+<div id="header-mpdal" style="display:none;">
+<div id="element" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": true}}'>
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div data-role="content">Content 1</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div data-role="content">Content 2</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div data-role="content">Content 3</div>
+</div>
+</div>
+
+
+
+
+<script>
+    require(
+    [
+        'jquery',
+        'Magento_Ui/js/modal/modal'
+    ],
+    function(
+        $,
+        modal
+    ) {
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            title: '',
+            buttons: [{
+                text: $.mage.__('Close'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#header-mpdal'));
+        $("#click-header").on('click',function(){ 
+            $("#header-mpdal").modal("openModal");
+        });
+
+    }
+);
+</script>
