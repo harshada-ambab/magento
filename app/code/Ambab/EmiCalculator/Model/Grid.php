@@ -44,9 +44,9 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     /**
      * Set EntityId.
      */
-    public function setEntityId($entityId)
+    public function setEntityId($entity_id)
     {
-        return $this->setData(self::ENTITY_ID, $entityId);
+        return $this->setData(self::ENTITY_ID, $entity_id);
     }
 
     
@@ -96,60 +96,60 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
      *
      * @return varchar
      */
-    public function getPublishDate()
-    {
-        return $this->getData(self::PUBLISH_DATE);
-    }
+    // public function getPublishDate()
+    // {
+    //     return $this->getData(self::PUBLISH_DATE);
+    // }
 
-    /**
-     * Set PublishDate.
-     */
-    public function setPublishDate($publishDate)
-    {
-        return $this->setData(self::PUBLISH_DATE, $publishDate);
-    }
+    // /**
+    //  * Set PublishDate.
+    //  */
+    // public function setPublishDate($publishDate)
+    // {
+    //     return $this->setData(self::PUBLISH_DATE, $publishDate);
+    // }
 
-    /**
-     * Get IsActive.
-     *
-     * @return varchar
-     */
-    public function getIsActive()
-    {
-        return $this->getData(self::IS_ACTIVE);
-    }
+    // /**
+    //  * Get IsActive.
+    //  *
+    //  * @return varchar
+    //  */
+    // public function getIsActive()
+    // {
+    //     return $this->getData(self::IS_ACTIVE);
+    // }
 
-    /**
-     * Set IsActive.
-     */
-    public function setIsActive($isActive)
-    {
-        return $this->setData(self::IS_ACTIVE, $isActive);
-    }
+    // /**
+    //  * Set IsActive.
+    //  */
+    // public function setIsActive($isActive)
+    // {
+    //     return $this->setData(self::IS_ACTIVE, $isActive);
+    // }
 
-    /**
-     * Get UpdateTime.
-     *
-     * @return varchar
-     */
-    public function getUpdateTime()
-    {
-        return $this->getData(self::UPDATE_TIME);
-    }
+    // /**
+    //  * Get UpdateTime.
+    //  *
+    //  * @return varchar
+    //  */
+    // public function getUpdateTime()
+    // {
+    //     return $this->getData(self::UPDATE_TIME);
+    // }
 
-    /**
-     * Set UpdateTime.
-     */
-    public function setUpdateTime($updateTime)
-    {
-        return $this->setData(self::UPDATE_TIME, $updateTime);
-    }
+    // /**
+    //  * Set UpdateTime.
+    //  */
+    // public function setUpdateTime($updateTime)
+    // {
+    //     return $this->setData(self::UPDATE_TIME, $updateTime);
+    // }
 
-    /**
-     * Get CreatedAt.
-     *
-     * @return varchar
-     */
+    // /**
+    //  * Get CreatedAt.
+    //  *
+    //  * @return varchar
+    //  */
     public function getCreatedAt()
     {
         return $this->getData(self::CREATED_AT);

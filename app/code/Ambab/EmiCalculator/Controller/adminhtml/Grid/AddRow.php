@@ -1,20 +1,32 @@
 <?php
-
+/**
+ * Webkul Grid List Controller.
+ * @category  Webkul
+ * @package   Webkul_Grid
+ * @author    Webkul
+ * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
 namespace Ambab\EmiCalculator\Controller\adminhtml\Grid;
 
 use Magento\Framework\Controller\ResultFactory;
 
 class AddRow extends \Magento\Backend\App\Action
 {
+    /**
+     * @var \Magento\Framework\Registry
+     */
     private $coreRegistry;
 
-    
+    /**
+     * @var \Webkul\Grid\Model\GridFactory
+     */
     private $gridFactory;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Framework\Registry $coreRegistry,
-     * @param \Ambab\EmiCalculator\Model\GridFactory $gridFactory
+     * @param \Webkul\Grid\Model\GridFactory $gridFactory
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
@@ -37,7 +49,7 @@ class AddRow extends \Magento\Backend\App\Action
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         if ($rowId) {
            $rowData = $rowData->load($rowId);
-           $rowTitle = $rowData->getBankName();
+           $rowTitle = $rowData->getTitle();
            if (!$rowData->getEntityId()) {
                $this->messageManager->addError(__('row data no longer exist.'));
                $this->_redirect('grid/grid/rowdata');
@@ -47,8 +59,8 @@ class AddRow extends \Magento\Backend\App\Action
 
        $this->coreRegistry->register('row_data', $rowData);
        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-       $title = $rowId ? __('Edit Row Data ').$rowTitle : __('Add Row Data');
-       $resultPage->getConfig()->getBankName()->prepend($title);
+       $title = $rowId ? __('Edit Row Data ').$rowTitle : __('Add Bank Details');
+       $resultPage->getConfig()->getTitle()->prepend($title);
        return $resultPage;
     }
 

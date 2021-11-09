@@ -16,6 +16,6 @@ class Emi extends \Magento\Framework\App\Action\Action
 
 	public function execute()
 	{
-		echo "heloo ";
+		echo "heloo";
 	}
 }

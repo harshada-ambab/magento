@@ -62,19 +62,20 @@ class InstallSchema implements InstallSchemaInterface
             ['nullable' => false],
             'RateOfInt'
         )
+        // ->addColumn(
+        //     'publish_date',
+        //     \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+        //     null,
+        //     [],
+        //     'Publish Date'
+        // )->addColumn(
+        //     'is_active',
+        //     \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+        //     null,
+        //     [],
+        //     'Active Status'
+        // )
         ->addColumn(
-            'publish_date',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
-            null,
-            [],
-            'Publish Date'
-        )->addColumn(
-            'is_active',
-            \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
-            null,
-            [],
-            'Active Status'
-        )->addColumn(
             'created_at',
             \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
             null,
@@ -83,13 +84,15 @@ class InstallSchema implements InstallSchemaInterface
                 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT,
             ],
             'Creation Time'
-        )->addColumn(
-            'update_time',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
-            null,
-            [],
-            'Modification Time'
-        )->setComment(
+         )
+        //->addColumn(
+        //     'update_time',
+        //     \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+        //     null,
+        //     [],
+        //     'Modification Time'
+        // )
+        ->setComment(
             'Row Data Table'
         );
 

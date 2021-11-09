@@ -11,9 +11,9 @@ interface GridInterface
     const Bank_Name = 'bank_name';
     const Month = 'month';
     const Rate_Of_Int = 'rate_of_int';
-    const PUBLISH_DATE = 'publish_date';
-    const IS_ACTIVE = 'is_active';
-    const UPDATE_TIME = 'update_time';
+    // const PUBLISH_DATE = 'publish_date';
+    // const IS_ACTIVE = 'is_active';
+    // const UPDATE_TIME = 'update_time';
     const CREATED_AT = 'created_at';
 
     /**
@@ -23,7 +23,7 @@ interface GridInterface
      */
     public function getEntityId();
 
-    public function setEntityId($entityId);
+    public function setEntityId($entity_id);
 
     /**
      * Get Title.
@@ -52,42 +52,42 @@ interface GridInterface
      *
      * @return varchar
      */
-    public function getPublishDate();
+    // public function getPublishDate();
 
-    /**
-     * Set PublishDate.
-     */
-    public function setPublishDate($publishDate);
+    // /**
+    //  * Set PublishDate.
+    //  */
+    // public function setPublishDate($publishDate);
 
-    /**
-     * Get IsActive.
-     *
-     * @return varchar
-     */
-    public function getIsActive();
+    // /**
+    //  * Get IsActive.
+    //  *
+    //  * @return varchar
+    //  */
+    // public function getIsActive();
 
-    /**
-     * Set StartingPrice.
-     */
-    public function setIsActive($isActive);
+    // /**
+    //  * Set StartingPrice.
+    //  */
+    // public function setIsActive($isActive);
 
-    /**
-     * Get UpdateTime.
-     *
-     * @return varchar
-     */
-    public function getUpdateTime();
+    // /**
+    //  * Get UpdateTime.
+    //  *
+    //  * @return varchar
+    //  */
+    // public function getUpdateTime();
 
-    /**
-     * Set UpdateTime.
-     */
-    public function setUpdateTime($updateTime);
+    // /**
+    //  * Set UpdateTime.
+    //  */
+    // public function setUpdateTime($updateTime);
 
-    /**
-     * Get CreatedAt.
-     *
-     * @return varchar
-     */
+    // /**
+    //  * Get CreatedAt.
+    //  *
+    //  * @return varchar
+    //  */
     public function getCreatedAt();
 
     /**

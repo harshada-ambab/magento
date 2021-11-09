@@ -32,7 +32,7 @@ class UpgradeData implements UpgradeDataInterface
 
             $data = [
                 [
-                    'entity_id' => 3,
+                    'entity_id' => 7,
                     'bank_name' => 'Kotak',
                     'month' => 6,
                     'rate_of_int' => 10,
@@ -40,7 +40,7 @@ class UpgradeData implements UpgradeDataInterface
 
                 ],
                 [
-                    'entity_id' => 4,
+                    'entity_id' => 8,
                     'bank_name' => 'Bank Of Baroda',
                     'month' => 12,
                     'rate_of_int' => 15,

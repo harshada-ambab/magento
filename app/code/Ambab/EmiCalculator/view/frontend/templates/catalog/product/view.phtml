@@ -1,37 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styleheet/bootstrap/bootstrap.min.css">
+    
+</head>
+<body>
 
-<!-- <a id="popup-modal" href="#">emi starts from</a> -->
+
+<div id="header-mpdal" >
+
+<div id="element" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
+    
+<?php
+$blockObj= $block->getLayout()->createBlock('Ambab\EmiCalculator\Block\Catalog\Product\Price');
+
+   $datacollection=$block->BankData(); 
+   $a = array();   
+    foreach ($datacollection as $data) {
+        $bankname = $data['bank_name'];
+        
+?>
+
+<div data-role="collapsible">
+
+        <div data-role="trigger">
+           <span><?php echo strtoupper($bankname);?></span>
+        </div>
+    </div>
+
+    <div data-role="content">
+        <table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">EMI Plan</th>
+      <th scope="col">Interest(Pa)</th>
+      <th scope="col">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+        $datacollection1=$block->BankDetails($bankname);
+        
+        foreach ($datacollection1 as $res){
+            $var = $res['rate_of_int'];
+            $rate = $var/(12*100);
+            $term = $res['month'];
+            $amount = $blockObj->getProductPrice();
+            $EMI = $block->EmiCalculation($rate,$term,$amount);
+            $NewEMI = ceil($EMI);
+            array_push($a,$NewEMI);
+    ?>
+    <tr>
+      
+      <td><?php echo $NewEMI.'x'.$term.'m'; ?></td>
+      <td><?php echo $res['rate_of_int'].'%'; ?></td>
+      <td><?php echo ceil($amount); ?></td>
+    </tr>
+    <?php
+    }
+?>
+  </tbody>
+</table>
+</div>
+<?php
+    }
+    
+?>
+   
+</div>
+</div>
+</body>
+</html>
 <?php if ($block->canShowBlock()): ?>
     <a href="#" id="click-header">
-    emi starts from
+    Emi Starts From <?php echo "$".min($a); ?>
 </a>
 <?php endif; ?>
-
-<div id="header-mpdal" style="display:none;">
-<div id="element" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": true}}'>
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 1</span>
-        </div>
-    </div>
-    <div data-role="content">Content 1</div>
-
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 2</span>
-        </div>
-    </div>
-    <div data-role="content">Content 2</div>
-
-    <div data-role="collapsible">
-        <div data-role="trigger">
-            <span>Title 3</span>
-        </div>
-    </div>
-    <div data-role="content">Content 3</div>
-</div>
-</div>
-
-
 
 
 <script>
