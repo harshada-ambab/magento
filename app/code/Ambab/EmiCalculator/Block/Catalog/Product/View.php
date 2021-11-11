@@ -46,24 +46,28 @@ public function Collection(){
     return $collection = $this->_GridFactory->create()->getCollection();
 }
 public function BankData(){
-
+    $collection = $this->_GridFactory->create()->getCollection();
     $tableName = $this->resourceConnection->getTableName('bank_details');
     $connection = $this->resourceConnection->getConnection();
-    $query = "SELECT COUNT(*),bank_name FROM $tableName GROUP BY bank_name HAVING 
-    COUNT(*) >= 1";
-    return $result = $connection->fetchAll($query);
+    $query = $connection->select()->from($tableName,['bank_name'])->distinct(true);
+    return $records = $connection->fetchAll($query);
+    //$query = "SELECT COUNT(*),bank_name FROM $tableName GROUP BY bank_name HAVING 
+    //COUNT(*) >= 1";
+    //$result = $connection->fetchAll($query);
 
 }
 public function BankDetails($bankname){
 
     $tableName = $this->resourceConnection->getTableName('bank_details');
     $connection = $this->resourceConnection->getConnection();
-    $query = "SELECT * FROM $tableName where bank_name = '$bankname'";
-    return $res = $connection->fetchAll($query);
+    $query = $connection->select()->from($tableName)->where('bank_name=?',$bankname);
+    return $records = $connection->fetchAll($query);
+    // $query = "SELECT * FROM $tableName where bank_name = '$bankname'";
+    // return $res = $connection->fetchAll($query);
 
 }
 public function EmiCalculation($rate,$term,$amount){
- $EMI = $amount * $rate * (pow(1 + $rate, $term) / (pow(1 + $rate, $term) - 1));
+ $EMI = $amount * $rate * (pow(1 + $rate, $term)/ (pow(1 + $rate, $term) - 1));
  return $EMI;
 }
 }
