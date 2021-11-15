@@ -1,5 +1,8 @@
 <?php
 namespace Ambab\EmiCalculator\Block\Catalog\Product;
+
+use Magento\Checkout\Model\Cart as CustomerCart;
+
 class Price extends \Magento\Framework\View\Element\Template
 {
     /**
@@ -29,6 +32,8 @@ class Price extends \Magento\Framework\View\Element\Template
         \Ambab\EmiCalculator\Model\ResourceModel\Grid\Grid\Collection $orderPayment,
         \Magento\Payment\Helper\Data $paymentHelper,
         \Magento\Payment\Model\Config $paymentConfig,
+
+        CustomerCart $cart,
         array $data = []
     ) {
         $this->registry = $registry;
@@ -37,6 +42,8 @@ class Price extends \Magento\Framework\View\Element\Template
         $this->_orderPayment = $orderPayment;
         $this->_paymentHelper = $paymentHelper;
         $this->_paymentConfig = $paymentConfig;
+
+        $this->cart = $cart;
 
         parent::__construct($context, $data);
     }
@@ -74,4 +81,14 @@ class Price extends \Magento\Framework\View\Element\Template
     }        
         return $paymentMethods;
     }
+
+
+    public function getSubtotal()
+    {
+        $totals = $this->cart->getQuote()->getTotals();
+
+        $subtotal = $totals['subtotal']['value'];
+        return $subtotal;
+    }
 }
+

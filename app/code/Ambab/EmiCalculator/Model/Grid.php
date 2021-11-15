@@ -91,65 +91,6 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
         return $this->setData(self::Rate_Of_Int, $rate_of_int);
     }
 
-    /**
-     * Get PublishDate.
-     *
-     * @return varchar
-     */
-    // public function getPublishDate()
-    // {
-    //     return $this->getData(self::PUBLISH_DATE);
-    // }
-
-    // /**
-    //  * Set PublishDate.
-    //  */
-    // public function setPublishDate($publishDate)
-    // {
-    //     return $this->setData(self::PUBLISH_DATE, $publishDate);
-    // }
-
-    // /**
-    //  * Get IsActive.
-    //  *
-    //  * @return varchar
-    //  */
-    // public function getIsActive()
-    // {
-    //     return $this->getData(self::IS_ACTIVE);
-    // }
-
-    // /**
-    //  * Set IsActive.
-    //  */
-    // public function setIsActive($isActive)
-    // {
-    //     return $this->setData(self::IS_ACTIVE, $isActive);
-    // }
-
-    // /**
-    //  * Get UpdateTime.
-    //  *
-    //  * @return varchar
-    //  */
-    // public function getUpdateTime()
-    // {
-    //     return $this->getData(self::UPDATE_TIME);
-    // }
-
-    // /**
-    //  * Set UpdateTime.
-    //  */
-    // public function setUpdateTime($updateTime)
-    // {
-    //     return $this->setData(self::UPDATE_TIME, $updateTime);
-    // }
-
-    // /**
-    //  * Get CreatedAt.
-    //  *
-    //  * @return varchar
-    //  */
     public function getCreatedAt()
     {
         return $this->getData(self::CREATED_AT);
@@ -162,4 +103,5 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     {
         return $this->setData(self::CREATED_AT, $createdAt);
     }
+
 }

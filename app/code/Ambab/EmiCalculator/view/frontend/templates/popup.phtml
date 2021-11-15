@@ -4,9 +4,7 @@
 <?php
 $blockObj= $block->getLayout()->createBlock('Ambab\EmiCalculator\Block\Catalog\Product\Price');
 $blockh= $block->getLayout()->createBlock('Ambab\EmiCalculator\Block\Catalog\Product\View');
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
-$amount = $cart->getQuote()->getBaseSubtotal();
+$amount = $blockObj->getSubtotal();
 ?>
 
 <div id="header-mpdal" class="container">

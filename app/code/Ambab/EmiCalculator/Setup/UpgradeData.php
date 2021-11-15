@@ -29,6 +29,7 @@ class UpgradeData implements UpgradeDataInterface
         //     && version_compare($context->getVersion(), '1.1.1') < 0
         // ) {
             $tableName = $setup->getTable('bank_details');
+            
 
             $data = [
                 [

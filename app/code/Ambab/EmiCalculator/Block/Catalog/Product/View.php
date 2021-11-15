@@ -14,8 +14,8 @@
 namespace Ambab\EmiCalculator\Block\Catalog\Product;
 use Magento\Catalog\Block\Product\Context;
 use Magento\Catalog\Block\Product\AbstractProduct;
-use Ambab\EmiCalc\Model\Grid;
-use Ambab\EmiCalc\Model\ResourceModel;
+use Ambab\EmiCalculator\Model\Grid;
+use Ambab\EmiCalculator\Model\ResourceModel;
 use Magento\Framework\App\ResourceConnection;
 
 

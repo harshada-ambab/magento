@@ -33,8 +33,6 @@ class InstallSchema implements InstallSchemaInterface
 
         $installer->startSetup();
 
-        
-
         $table = $installer->getConnection()->newTable(
             $installer->getTable('bank_details')
         )->addColumn(
@@ -57,8 +55,8 @@ class InstallSchema implements InstallSchemaInterface
             'Month'
         )->addColumn(
             'rate_of_int',
-            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-            '2M',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
             ['nullable' => false],
             'RateOfInt'
         )
@@ -85,6 +83,15 @@ class InstallSchema implements InstallSchemaInterface
             ],
             'Creation Time'
          )
+         ->addIndex(  
+            $installer->getIdxName(  
+                 $installer->getTable('bank_details'),  
+                 ['bank_name'],  
+                 \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT  
+            ),  
+            [ 'bank_name'],  
+            ['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT]  
+       )  
         //->addColumn(
         //     'update_time',
         //     \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
