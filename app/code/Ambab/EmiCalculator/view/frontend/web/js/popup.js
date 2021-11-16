@@ -20,6 +20,8 @@
               var options = { 
                 type: 'popup', 
                 responsive: true, 
+                innerScroll: true,
+                clickableOverlay: true,
                 clickableOverlay: false, 
                 title: $.mage.__('Emi Details'), 
                 modalClass: 'popup', 

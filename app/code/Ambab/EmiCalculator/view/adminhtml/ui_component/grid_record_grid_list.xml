@@ -39,6 +39,12 @@
     </dataSource>
 
    <listingToolbar name="listing_top">
+   <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="template" xsi:type="string">ui/grid/toolbar</item>
+            <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
+        </item>
+    </argument>
    <filterSearch name="fulltext"/>
     <bookmark name="bookmarks"/>
     <columnsControls name="columns_controls"/>
@@ -56,7 +62,7 @@
            <item name="config" xsi:type="array">
                <item name="type" xsi:type="string">delete</item>
                <item name="label" xsi:type="string" translate="true">Delete</item>
-               <item name="url" xsi:type="url" path="Ambab_EmiCalculator/category/massDelete"/>
+               <item name="url" xsi:type="url" path="grid/grid/massdelete"/>
                <item name="confirm" xsi:type="array">
                   <item name="title" xsi:type="string" translate="true">Delete items</item>
                   <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
@@ -75,10 +81,11 @@
                                 <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
                             </item>
                         </item>
-                    </item>
+                    </item>                
                 </item>
             </argument>
     </filters>
+    
     <paging name="listing_paging"/>
   </listingToolbar>
     <columns name="grid_records_columns">
@@ -118,7 +125,7 @@
            </argument>
        </column>
 
-        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
+    <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">dateRange</item>
@@ -129,7 +136,6 @@
            </argument>
        </column>
 
-
        <actionsColumn name="actions" class="Ambab\EmiCalculator\Ui\Component\Listing\Grid\Column\Action">
             <settings>
                 <indexField>entity_id</indexField>
@@ -137,7 +143,8 @@
                 <resizeDefaultWidth>107</resizeDefaultWidth>
             </settings>
         </actionsColumn>
-
+       
        
     </columns>
+     
 </listing>
