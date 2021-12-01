@@ -21,9 +21,20 @@ require(
             }]
         };
 
+        
         var popup = modal(options, $('#header-mpdal'));
         $("#click-header").on('click',function(){ 
-            $("#header-mpdal").modal("openModal");
+            var url = "<?php  echo $block->getUrl().'emi/index/content'?>"
+                    $.ajax({
+                        url: url,
+                        cache: true,
+                        dataType: 'json'
+                    })                    
+                    .done(function (data) {
+                        $(element).html(data['html']);
+                        
+                    })
+                    $("#header-mpdal").modal("openModal");
         });
 
     }

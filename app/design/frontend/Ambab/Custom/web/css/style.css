@@ -1,0 +1,36 @@
+.old-price .sly-old-price .no-display{
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.old-price {
+ text-decoration: line-through;
+        
+}
+.custom-wish {
+  position: absolute;
+  top: 261px;
+  right: 570px;
+  z-index: 9;
+}
+
+.discount{
+  margin-top:12px;
+}
+.discount-percent{
+  margin-top:5px;
+  font-weight:600;
+      top: 9px;
+      z-index: 100;
+      background: #b1a49e;
+      color: #122c4b;
+      padding: 7px;
+      border-radius: 15px 0px;
+      right: 9px;
+} 
+.hot{
+  font-weight: bold;
+}
+.hot::after{
+  content: "\1F525";
+}
